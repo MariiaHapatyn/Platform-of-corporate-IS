@@ -33,19 +33,29 @@ namespace Task1
                 Person person;
                 if (words[0] == "student")
                 {
-                    person = new Student();
+                    Student student = new Student();
+                    student.Input(words[1]);
+                    string[] parts = words[1].Split(' ');
+                    int teacherId = int.Parse(parts[parts.Length - 1]);
+                    var teacher = persons.SingleOrDefault(p => p.Id == teacherId) as Teacher;
+                    if (teacher == null)
+                    {
+                        throw new Exception("Teacher not found");
+                    }
+                    student.Teacher = teacher;
+                    teacher.Students.Add(student);
+                    person = student;
                 }
                 else if (words[0] == "teacher")
                 {
                     person = new Teacher();
+                    person.Input(words[1]);
                 }
                 else
                 {
                     throw new Exception("invalid data");
                 }
-                person.Input(words[1]);
 
-                var a = person.ToString();
                 persons.Add(person);
             }
 
