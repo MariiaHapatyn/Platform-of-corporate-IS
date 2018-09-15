@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Linq;
 using Task1.Models;
 
 namespace Task1
@@ -10,7 +12,7 @@ namespace Task1
         public List<string> ReadFromFile(string fileName)
         {
             List<string> lines = new List<string>();
-            using (StreamReader sr = new StreamReader(fileName, System.Text.Encoding.Default))
+            using (StreamReader sr = new StreamReader(fileName, Encoding.Default))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -50,11 +52,29 @@ namespace Task1
             return persons;
         }
 
+        public int CountStudents(List<Person> persons)
+        {
+            int studentsCounter;
+            studentsCounter = persons.Where(p => p.GetType() == typeof(Student)).Count();
+
+            return studentsCounter;
+        }
+
+        public int CountTeachers(List<Person> persons)
+        {
+            int teachersCounter;
+            teachersCounter = persons.Where(p => p.GetType() == typeof(Teacher)).Count();
+
+            return teachersCounter;
+        }
+
         public void DoTasks()
         {
             string fileName = "persons.txt";
             List<string> data = ReadFromFile(fileName);
             List<Person> persons = ParseLines(data);
+            int amountOfSudents = CountStudents(persons);
+            int amountOfTeachers = CountTeachers(persons);
         }
     }
 }
