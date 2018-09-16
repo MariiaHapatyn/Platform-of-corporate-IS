@@ -68,6 +68,19 @@ namespace Task1
             return teachersCounter;
         }
 
+        public void DemonstrateEqualsWork(List<Person> persons)
+        {
+            // Distinct implicitly uses Equals()
+            IEnumerable<Person> distinctPersons = persons.Distinct();
+            for (int i = 0; i < distinctPersons.Count() -1; i++)
+            {
+                if(distinctPersons.ElementAt(i).Equals(distinctPersons.ElementAt(i+1)))
+                {
+                    throw new Exception("equals methods does not work properly");
+                }
+            }
+        }
+
         public void DoTasks()
         {
             string fileName = "persons.txt";
@@ -75,6 +88,7 @@ namespace Task1
             List<Person> persons = ParseLines(data);
             int amountOfSudents = CountStudents(persons);
             int amountOfTeachers = CountTeachers(persons);
+            DemonstrateEqualsWork(persons);
         }
     }
 }
