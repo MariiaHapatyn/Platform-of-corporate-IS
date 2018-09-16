@@ -5,9 +5,15 @@ using System.Collections.Generic;
 
 namespace Task1UnitTests
 {
+    /// <summary>
+    /// Class for testing models
+    /// </summary>
     [TestClass]
     public class ModelTests
     {
+        /// <summary>
+        /// Person equals Test
+        /// </summary>
         [TestMethod]
         public void PersonEqualsTest()
         {
@@ -16,6 +22,10 @@ namespace Task1UnitTests
             bool res=p1.Equals(p2);
             Assert.IsTrue(res);
         }
+
+        /// <summary>
+        /// Person to string Test
+        /// </summary>
         [TestMethod]
         public void PersonToStringTest()
         {
@@ -25,6 +35,10 @@ namespace Task1UnitTests
             string res = p1.ToString();
             Assert.AreEqual(exp, res);
         }
+
+        /// <summary>
+        /// Student equals Test
+        /// </summary>
         [TestMethod]
         public void StudentEqualsTest()
         {
@@ -34,6 +48,10 @@ namespace Task1UnitTests
             bool exp = p1.Equals(p2);
             Assert.IsTrue(exp);
         }
+
+        /// <summary>
+        /// Student to string Test
+        /// </summary>
         [TestMethod]
         public void StudentToStringTest()
         {
@@ -44,6 +62,10 @@ namespace Task1UnitTests
             string res = p1.ToString();
             Assert.AreEqual(exp, res);
         }
+
+        /// <summary>
+        /// Teacher equals Test
+        /// </summary>
         [TestMethod]
         public void TeacherEqualsTest()
         {
@@ -52,6 +74,10 @@ namespace Task1UnitTests
             bool exp = t1.Equals(t2);
             Assert.IsTrue(exp);
         }
+
+        /// <summary>
+        /// Teacher to string Test
+        /// </summary>
         [TestMethod]
         public void TeacherToStringTest()
         {

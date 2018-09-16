@@ -6,15 +6,25 @@ using System.Collections.Generic;
 
 namespace Task1UnitTests
 {
+    /// <summary>
+    /// Class for testing tasks
+    /// </summary>
     [TestClass]
     public class TaskTests
     {
+        /// <summary>
+        /// Read from file Test
+        /// </summary>
         [TestMethod]
         public void ReadFromFileTest()
         {
             Task t = new Task();
             List<string> l = t.ReadFromFile("persons.txt");
         }
+
+        /// <summary>
+        /// Read from file exception Test
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(System.IO.FileNotFoundException))]
         public void ReadFromFileExceptionTest()
@@ -22,6 +32,10 @@ namespace Task1UnitTests
             Task t = new Task();
             List<string> l = t.ReadFromFile("p.txt");
         }
+
+        /// <summary>
+        /// Count students Test
+        /// </summary>
         [TestMethod]
         public void CountStudentsTest()
         {
@@ -32,6 +46,10 @@ namespace Task1UnitTests
             int exp = 3;
             Assert.AreEqual(amountOfStudents, exp);
         }
+
+        /// <summary>
+        /// Count teachers Test
+        /// </summary>
         [TestMethod]
         public void CountTeachersTest()
         {
@@ -42,6 +60,10 @@ namespace Task1UnitTests
             int exp = 3;
             Assert.AreEqual(amountOfTeachers, exp);
         }
+
+        /// <summary>
+        /// Do tasks Test
+        /// </summary>
         [TestMethod]
         public void DoTasksTest()
         {
