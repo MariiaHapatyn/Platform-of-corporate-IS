@@ -9,6 +9,10 @@ namespace Task1
 {
     public class Task
     {
+        // <summary>
+        /// Parse files to list of strings
+        /// </summary>
+        /// <param name="filename">file with information</param>
         public List<string> ReadFromFile(string fileName)
         {
             List<string> lines = new List<string>();
@@ -24,6 +28,10 @@ namespace Task1
             return lines;
         }
 
+        // <summary>
+        /// Parse list of strings to list of objects
+        /// </summary>
+        /// <param name="lines">list of strings with properties for objects</param>
         public List<Person> ParseLines(List<string> lines)
         {
             List<Person> persons = new List<Person>();
@@ -58,6 +66,10 @@ namespace Task1
             return persons;
         }
 
+        // <summary>
+        /// Count students in collection
+        /// </summary>
+        /// <param name="persons">list of persons</param>
         public int CountStudents(List<Person> persons)
         {
             int studentsCounter;
@@ -66,6 +78,10 @@ namespace Task1
             return studentsCounter;
         }
 
+        // <summary>
+        /// Count teachers in collection
+        /// </summary>
+        /// <param name="persons">list of persons</param>
         public int CountTeachers(List<Person> persons)
         {
             int teachersCounter;
@@ -74,6 +90,13 @@ namespace Task1
             return teachersCounter;
         }
 
+        // <summary>
+        /// Demonstrate who equals method works
+        /// </summary>
+        /// <param name="persons">list of persons</param>
+        /// <remarks>
+        /// Crate collection wich contains only unique elements
+        /// </remarks>
         public void DemonstrateEqualsWork(List<Person> persons)
         {
             // Distinct implicitly uses Equals()
@@ -87,6 +110,9 @@ namespace Task1
             }
         }
 
+        // <summary>
+        /// Exectutes all functions for thw whole task
+        /// </summary>
         public void DoTasks()
         {
             string fileName = "persons.txt";
