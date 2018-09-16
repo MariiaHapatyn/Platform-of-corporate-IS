@@ -1,4 +1,5 @@
-﻿namespace Task1
+﻿using System;
+namespace Task1
 {
     class Program
     {
@@ -6,6 +7,7 @@
         {
             Task task = new Task();
             task.DoTasks();
+            Console.ReadKey();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Task1
 {
     public class Task
     {
-        // <summary>
+        /// <summary>
         /// Parse files to list of strings
         /// </summary>
         /// <param name="filename">file with information</param>
@@ -28,7 +28,7 @@ namespace Task1
             return lines;
         }
 
-        // <summary>
+        /// <summary>
         /// Parse list of strings to list of objects
         /// </summary>
         /// <param name="lines">list of strings with properties for objects</param>
@@ -66,7 +66,7 @@ namespace Task1
             return persons;
         }
 
-        // <summary>
+        /// <summary>
         /// Count students in collection
         /// </summary>
         /// <param name="persons">list of persons</param>
@@ -74,7 +74,7 @@ namespace Task1
         {
             int studentsCounter;
             studentsCounter = persons.Where(p => p.GetType() == typeof(Student)).Count();
-
+            
             return studentsCounter;
         }
 
@@ -86,11 +86,11 @@ namespace Task1
         {
             int teachersCounter;
             teachersCounter = persons.Where(p => p.GetType() == typeof(Teacher)).Count();
-
+            
             return teachersCounter;
         }
 
-        // <summary>
+        /// <summary>
         /// Demonstrate who equals method works
         /// </summary>
         /// <param name="persons">list of persons</param>
@@ -110,7 +110,7 @@ namespace Task1
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Exectutes all functions for thw whole task
         /// </summary>
         public void DoTasks()

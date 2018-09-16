@@ -1,2 +1,6 @@
-student 1 Andriy 19;2 Oleg 30
-teacher 3 Oleg 30;1 Andriy 19;4 Sophia 19
+teacher 1 Oleg 30
+teacher 2 Ivan 31
+teacher 3 Illia 33
+student 4 Andriy 19 1
+student 5 Oleg 30 1
+student 6 Ihor 30 3
