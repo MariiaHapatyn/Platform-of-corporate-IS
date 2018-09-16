@@ -39,17 +39,5 @@ namespace Task1.Models
             }
             return str;
         }
-
-        public override void Input(string line)
-        {
-            string[] words = line.Split(';');
-            base.Input(words[0]);
-            for (int i = 1; i < words.Length; i++)
-            {
-                string[] data = words[i].Split(' ');
-                Student student = new Student(Int32.Parse(data[0]), data[1], Int32.Parse(data[2]), this);
-                Students.Add(student);
-            }
-        }
     }
 }

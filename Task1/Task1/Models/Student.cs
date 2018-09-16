@@ -27,13 +27,5 @@ namespace Task1.Models
         {
             return base.ToString() + " teacher:" + Teacher.Name;
         }
-
-        public override void Input(string line)
-        {
-            string[] words = line.Split(';');
-            base.Input(words[0]);
-            string[] data = words[1].Split(' ');
-            Teacher = new Teacher(Int32.Parse(data[0]), data[1], Int32.Parse(data[2]), this);
-        }
     }
 }
