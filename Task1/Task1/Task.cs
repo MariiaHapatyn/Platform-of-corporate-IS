@@ -38,11 +38,7 @@ namespace Task1
                     string[] parts = words[1].Split(' ');
                     int teacherId = int.Parse(parts[parts.Length - 1]);
                     var teacher = persons.SingleOrDefault(p => p.Id == teacherId) as Teacher;
-                    if (teacher == null)
-                    {
-                        throw new Exception("Teacher not found");
-                    }
-                    student.Teacher = teacher;
+                    student.Teacher = teacher ?? throw new Exception("Teacher not found");
                     teacher.Students.Add(student);
                     person = student;
                 }
