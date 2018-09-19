@@ -116,7 +116,27 @@ namespace Task1
         public void DoTasks()
         {
             string fileName = "persons.txt";
-            List<string> data = ReadFromFile(fileName);
+            List<string> data;
+            try
+            {
+                data = ReadFromFile(fileName);
+            }
+            catch (FileNotFoundException fileMissingException)
+            {
+                Console.WriteLine($"File missing! {fileMissingException.Message}");
+                throw;
+            }
+            catch (FileLoadException fileIsEmptyException)
+            {
+                Console.WriteLine($"Something go wrong with file! {fileIsEmptyException.Message}");
+                throw;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
             List<Person> persons = ParseLines(data);
             int amountOfSudents = CountStudents(persons);
             int amountOfTeachers = CountTeachers(persons);
