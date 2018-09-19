@@ -110,8 +110,13 @@ namespace Task1
             }
         }
 
-
-
+        /// <summary>
+        /// Clones list of objects
+        /// </summary>
+        /// <param name="persons">list of persons</param>
+        /// <returns>
+        /// Cloned list
+        /// </returns>
         public List<Person> CloneList(List<Person> persons)
         {
             Person[] clonedAll = new Person[persons.Count()];
@@ -120,6 +125,11 @@ namespace Task1
             return clonedAll.ToList();
         }
 
+        /// <summary>
+        /// Writes elements of a collection into a file
+        /// </summary>
+        /// <param name="persons">list of persons</param>
+        /// <param name="fileName">name of file to write into</param>
         public void Print(List<Person> persons, string fileName)
         {
             using (StreamWriter sw = new StreamWriter(fileName))
