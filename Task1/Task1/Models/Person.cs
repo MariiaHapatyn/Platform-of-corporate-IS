@@ -14,10 +14,12 @@ namespace Task1.Models
         /// Store for the Id property.
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// Store for the Name property.
         /// </summary>
         public string Name { get; set; }
+
         /// <summary>
         /// Store for the Age property.
         /// </summary>
@@ -26,7 +28,9 @@ namespace Task1.Models
         /// <summary>
         /// The class default constructor.
         /// </summary>
-        public Person() { }
+        public Person()
+        {
+        }
 
         /// <summary>
         /// The class constructor with parameters.
@@ -61,7 +65,7 @@ namespace Task1.Models
             }
 
             Person person = (Person)obj;
-            return (this.Name == person.Name && this.Age == person.Age);
+            return this.Name == person.Name && this.Age == person.Age;
         }
 
         /// <summary>

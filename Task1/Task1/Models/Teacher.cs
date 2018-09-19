@@ -11,7 +11,7 @@ namespace Task1.Models
     /// </remarks>
     public class Teacher : Person
     {
-        // <summary>
+        /// <summary>
         /// Pointer to list of students
         /// </summary>
         public List<Student> Students { get; set; } = new List<Student>();
@@ -19,29 +19,31 @@ namespace Task1.Models
         /// <summary>
         /// The class default constructor.
         /// </summary>
-        public Teacher() : base() { }
+        public Teacher() : base()
+        {
+        }
 
-        // <summary>
+        /// <summary>
         /// The class constructor with parameters.
         /// </summary>
         /// <param name="id">person id</param>
         /// <param name="name">person name</param>
         /// <param name="age">person age</param>
-        ///  <param name="students">students of teacher</param>
-        ///  <remarks>Pass params to base class</remarks>
+        /// <param name="students">students of teacher</param>
+        /// <remarks>Pass params to base class</remarks>
         public Teacher(int id, string name, int age, List<Student> students) : base(id, name, age)
         {
             Students = students;
         }
 
-        // <summary>
+        /// <summary>
         /// The class constructor with parameters.
         /// </summary>
         /// <param name="id">person id</param>
         /// <param name="name">person name</param>
         /// <param name="age">person age</param>
-        ///  <param name="student">student of teacher</param>
-        ///  <remarks>Pass params to base class</remarks>
+        /// <param name="student">student of teacher</param>
+        /// <remarks>Pass params to base class</remarks>
         public Teacher(int id, string name, int age, Student student) : base(id, name, age)
         {
             Students.Add(student);
@@ -77,6 +79,7 @@ namespace Task1.Models
             {
                 str += " " + student;
             }
+
             return str;
         }
     }

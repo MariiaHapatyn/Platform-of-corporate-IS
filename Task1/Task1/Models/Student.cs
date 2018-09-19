@@ -18,16 +18,18 @@ namespace Task1.Models
         /// <summary>
         /// The class default constructor.
         /// </summary>
-        public Student() : base() { }
+        public Student() : base()
+        {
+        }
 
-        // <summary>
+        /// <summary>
         /// The class constructor with parameters.
         /// </summary>
         /// <param name="id">person id</param>
         /// <param name="name">person name</param>
         /// <param name="age">person age</param>
-        ///  <param name="teacher">student teacher</param>
-        ///  <remarks>Pass params to base class</remarks>
+        /// <param name="teacher">student teacher</param>
+        /// <remarks>Pass params to base class</remarks>
         public Student(int id, string name, int age, Teacher teacher) : base(id, name, age)
         {
             Teacher = teacher;

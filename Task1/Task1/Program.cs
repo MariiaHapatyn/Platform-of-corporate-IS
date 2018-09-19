@@ -1,9 +1,10 @@
 ﻿using System;
+
 namespace Task1
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Task task = new Task();
             task.DoTasks();

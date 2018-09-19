@@ -78,7 +78,7 @@ namespace Task1
             return studentsCounter;
         }
 
-        // <summary>
+        /// <summary>
         /// Count teachers in collection
         /// </summary>
         /// <param name="persons">list of persons</param>
@@ -101,9 +101,9 @@ namespace Task1
         {
             // Distinct implicitly uses Equals()
             IEnumerable<Person> distinctPersons = persons.Distinct();
-            for (int i = 0; i < distinctPersons.Count() -1; i++)
+            for (int i = 0; i < distinctPersons.Count() - 1; i++)
             {
-                if(distinctPersons.ElementAt(i).Equals(distinctPersons.ElementAt(i+1)))
+                if (distinctPersons.ElementAt(i).Equals(distinctPersons.ElementAt(i + 1)))
                 {
                     throw new Exception("equals methods does not work properly");
                 }
@@ -111,7 +111,7 @@ namespace Task1
         }
 
         /// <summary>
-        /// Exectutes all functions for thw whole task
+        /// Exectutes all functions for the whole task
         /// </summary>
         public void DoTasks()
         {
