@@ -62,6 +62,19 @@ namespace Task1UnitTests
         }
 
         /// <summary>
+        /// Count teachers Test
+        /// </summary>
+        [TestMethod]
+        public void CloneTest()
+        {
+            Task t = new Task();
+            List<string> data = t.ReadFromFile("persons.txt");
+            List<Person> persons = t.ParseLines(data);
+            List<Person> cloned = t.CloneList(persons);
+            CollectionAssert.AreEqual(persons, cloned);
+        }
+
+        /// <summary>
         /// Do tasks Test
         /// </summary>
         [TestMethod]
