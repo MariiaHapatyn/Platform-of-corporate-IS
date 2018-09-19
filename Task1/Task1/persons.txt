@@ -4,3 +4,4 @@ teacher 3 Illia 33
 student 4 Andriy 19 1
 student 5 Oleg 30 1
 student 6 Ihor 30 3
+student 5 Oleg 30 1

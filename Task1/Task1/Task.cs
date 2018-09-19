@@ -74,7 +74,7 @@ namespace Task1
         {
             int studentsCounter;
             studentsCounter = persons.Where(p => p.GetType() == typeof(Student)).Count();
-            
+
             return studentsCounter;
         }
 
@@ -86,7 +86,7 @@ namespace Task1
         {
             int teachersCounter;
             teachersCounter = persons.Where(p => p.GetType() == typeof(Teacher)).Count();
-            
+
             return teachersCounter;
         }
 
@@ -110,16 +110,38 @@ namespace Task1
             }
         }
 
+
+
+        public List<Person> CloneList(List<Person> persons)
+        {
+            Person[] clonedAll = new Person[persons.Count()];
+            clonedAll = (Person[])persons.ToArray().Clone();
+
+            return clonedAll.ToList();
+        }
+
+        public void Print(List<Person> persons, string fileName)
+        {
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.WriteLine("Persons:");
+                foreach (var person in persons)
+                {
+                    sw.WriteLine(person.ToString());
+                }
+            }
+        }
+
         /// <summary>
         /// Exectutes all functions for the whole task
         /// </summary>
         public void DoTasks()
         {
-            string fileName = "persons.txt";
+            string inputfileName = "persons.txt";
             List<string> data;
             try
             {
-                data = ReadFromFile(fileName);
+                data = ReadFromFile(inputfileName);
             }
             catch (FileNotFoundException fileMissingException)
             {
@@ -138,9 +160,16 @@ namespace Task1
             }
 
             List<Person> persons = ParseLines(data);
+
             int amountOfSudents = CountStudents(persons);
             int amountOfTeachers = CountTeachers(persons);
             DemonstrateEqualsWork(persons);
+            Console.WriteLine($"Amount of students: { amountOfSudents}");
+            Console.WriteLine($"Amount of teachers: { amountOfTeachers}");
+
+            string outputFileName = "cloned.txt";
+            List<Person> cloned = CloneList(persons);
+            Print(cloned, outputFileName);            
         }
     }
 }
