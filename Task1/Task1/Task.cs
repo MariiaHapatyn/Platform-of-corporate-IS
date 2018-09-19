@@ -100,7 +100,7 @@ namespace Task1
         public void DemonstrateEqualsWork(List<Person> persons)
         {
             // Distinct implicitly uses Equals()
-            IEnumerable<Person> distinctPersons = persons.Distinct();
+            IEnumerable<Person> distinctPersons = persons.Distinct().OrderBy(person => person.Id);
             for (int i = 0; i < distinctPersons.Count() - 1; i++)
             {
                 if (distinctPersons.ElementAt(i).Equals(distinctPersons.ElementAt(i + 1)))

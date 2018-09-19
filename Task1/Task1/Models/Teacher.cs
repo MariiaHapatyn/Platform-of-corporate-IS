@@ -82,7 +82,6 @@ namespace Task1.Models
             }
 
             return str;
-        }
-        
+        }        
     }
 }

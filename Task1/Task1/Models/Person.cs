@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Task1.Models
 {
@@ -88,6 +87,5 @@ namespace Task1.Models
             Name = words[1];
             Age = Convert.ToInt32(words[2]);
         }
-
     }
 }
