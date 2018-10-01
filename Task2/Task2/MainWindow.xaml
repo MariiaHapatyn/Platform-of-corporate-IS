@@ -9,11 +9,11 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New" Command="{Binding ClearWindow_Command}"/>
-                <MenuItem Header="Open" Command="{Binding OpenFile_Command}"/>
-                <MenuItem Header="Save" Command="{Binding SaveFile_Command}"/>
+                <MenuItem Header="New" Command="{Binding ClearWindow_Command}" Click="Click_New"/>
+                <MenuItem Header="Open" Command="{Binding OpenFile_Command}" Click="Click_Open"/>
+                <MenuItem Header="Save" Command="{Binding SaveFile_Command}" Click="Click_Save"/>
                 <Separator />
-                <MenuItem Header="Exit" Command="{Binding CloseWindow_Command}" CommandParameter="{Binding ElementName=MainWindowName}"/>
+                <MenuItem Header="Exit" Command="{Binding CloseWindow_Command}" CommandParameter="{Binding ElementName=MainWindowName}" Click="Click_Exit"/>
             </MenuItem>
             <MenuItem Header="Shapes" ItemsSource="{Binding Hexagones}">
                 <MenuItem.ItemContainerStyle>
