@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ColorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,8 +68,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BL\HexagoneBL.cs" />
+    <Compile Include="BL\MainViewModel.cs" />
     <Compile Include="Classes\Command.cs" />
     <Compile Include="Classes\Hexagone.cs" />
+    <Compile Include="ColorsWindow.xaml.cs">
+      <DependentUpon>ColorsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
