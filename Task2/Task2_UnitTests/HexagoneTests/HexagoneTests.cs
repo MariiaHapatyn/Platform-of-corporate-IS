@@ -4,7 +4,6 @@ using Task2.Classes;
 using System.Windows.Media;
 using System.Windows;
 
-
 namespace Task2_UnitTests
 {
     [TestClass]
@@ -41,6 +40,7 @@ namespace Task2_UnitTests
         {
             Hexagone hexagone = new Hexagone();
             PointCollection points = new PointCollection();
+
             //Too many points for hexagone (7)
             points.Add(new Point(67, 89));
             points.Add(new Point(67, 45));
