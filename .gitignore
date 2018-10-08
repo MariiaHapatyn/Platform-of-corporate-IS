@@ -8,3 +8,6 @@ Task1/Task1UnitTests/StyleCop.Cache
 Task2/Task2/obj/
 Task2/Task2/bin/
 Task2/.vs/
+Task2/Task2_UnitTests/obj/
+Task2/Task2_UnitTests/bin/
+Task2/packages/
