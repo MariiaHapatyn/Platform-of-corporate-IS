@@ -1,0 +1,17 @@
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Task2_UnitTests.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Task2_UnitTests.pdb
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Task2.exe
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Task2.pdb
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Task2.exe.config
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\obj\Debug\Task2_UnitTests.csprojAssemblyReference.cache
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\obj\Debug\Task2_UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\obj\Debug\Task2_UnitTests.csproj.CopyComplete
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\obj\Debug\Task2_UnitTests.dll
+C:\Users\Olya\Desktop\PofCIS_Team7\Task2\Task2_UnitTests\obj\Debug\Task2_UnitTests.pdb
