@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -55,7 +56,10 @@ namespace Task2.BL
             CloseWindow_Command = new RelayCommand(CloseWindow);
             DrawClick_Command = new RelayCommand(DrawClick);
             ApplyColor_Command = new RelayCommand(ApplyColor);
+            SelectHexagone_Command = new RelayCommand(SelectHexagone);
+            Drag_Command = new RelayCommand(Drag);
         }
+
         //Painting
         public ICommand DrawClick_Command { get; private set; }
         public ICommand ApplyColor_Command { get; set; }
@@ -66,7 +70,14 @@ namespace Task2.BL
         public ICommand SaveFile_Command { get; private set; }
         public ICommand CloseWindow_Command { get; private set; }
 
-        //Painting
+        //Selecting and draging hexogones
+        public ICommand SelectHexagone_Command { get; private set; }
+        public ICommand Drag_Command { get; private set; }
+        private bool AllowDragging { get; set; }
+        private Point MousePosition { get; set; }
+        private Polygon SelectedHexagone { get; set; }
+
+        
         private void DrawClick(object obj)
         {
             Point mousePoint = Mouse.GetPosition((IInputElement)obj);
@@ -151,5 +162,41 @@ namespace Task2.BL
             (obj as MainWindow).Close();
         }
 
+        //Selecting and draging hexogones
+        private void SelectHexagone(object obj)
+        {
+            Polygon curHexagone = (obj as Polygon);
+            curHexagone.MouseDown += new MouseButtonEventHandler(Hexagone_MouseDown);
+            OnPropertyChanged("Hexagones");
+        }
+
+        private void Drag(object obj)
+        {
+            Canvas plane = (obj as Canvas);
+            plane.MouseMove += new MouseEventHandler(Canvas_MouseMove);
+            plane.MouseUp += new MouseButtonEventHandler(Canvas_MouseUp);
+        }
+
+        //Events
+        void Hexagone_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AllowDragging = true;
+            SelectedHexagone = sender as Polygon;
+            MousePosition = e.GetPosition(SelectedHexagone);
+        }
+
+        void Canvas_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            AllowDragging = false;
+        }
+
+        void Canvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (AllowDragging)
+            {
+                Canvas.SetLeft(SelectedHexagone, e.GetPosition(sender as IInputElement).X - MousePosition.X);
+                Canvas.SetTop(SelectedHexagone, e.GetPosition(sender as IInputElement).Y - MousePosition.Y);
+            }
+        }
     }
 }
