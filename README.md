@@ -1,6 +1,11 @@
 # Platform-of-corporate-IS
-## PMi-31
-#### Team 7:
+## AMi-31
+
+## Task 3, WPF-Service
+
+# Варіант 1. “Замовлення таксі (для водія таксі)”. 
+
+#### Команда 7:
 * [Andriana Shcherbak](https://github.com/Andriana008)
 * [Andrew Dubyk](https://github.com/andrewDubyk)
 * [Olya Pastushchak](https://github.com/OlyaPastushchak)
