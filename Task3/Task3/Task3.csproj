@@ -62,6 +62,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DAO\DataTypes\Client.cs" />
+    <Compile Include="DAO\DataTypes\Driver.cs" />
+    <Compile Include="DAO\DataTypes\Order.cs" />
+    <Compile Include="DAO\IOTypes\ClientsDB.cs" />
+    <Compile Include="DAO\IOTypes\DriversDB.cs" />
+    <Compile Include="DAO\IOTypes\OrdersDB.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -92,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\InputData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
