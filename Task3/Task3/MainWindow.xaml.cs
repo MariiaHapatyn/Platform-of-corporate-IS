@@ -56,7 +56,7 @@ namespace Task3
             driversInfo.UpdateDriver(currentDriver);
             driversInfo.WriteToFile();
             ordersInfo.WriteToFile();
-            MessageBox.Show(String.Format("Дякуюємо за роботу {0}!", currentDriver.Name), "Допобачення");
+            MessageBox.Show(String.Format("Дякуюємо за роботу {0}!", currentDriver.Name), "До побачення!");
             Close();
         }
         private void orders_Click(object sender, RoutedEventArgs e)
@@ -64,8 +64,8 @@ namespace Task3
             var item = (sender as ListView).SelectedItem;
             if (item != null)
             {
-                //OrderWindow wind = new OrderWindow(item as Order);
-               // wind.Show();
+                OrderWindow wind = new OrderWindow(item as Order);
+                wind.Show();
             }
         }
         public void updateOrders(Order orderToUpdate)
