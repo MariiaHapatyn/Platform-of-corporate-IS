@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Task3.DAO.DataTypes;
 using Task3.DAO.IOTypes;
-using Taxi_Driver_WPF.IOTypes;
 
 namespace Task3
 {

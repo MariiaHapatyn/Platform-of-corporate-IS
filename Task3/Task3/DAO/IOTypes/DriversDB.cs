@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Task3.DAO.DataTypes;
 
-namespace Taxi_Driver_WPF.IOTypes
+namespace Task3.DAO.IOTypes
 {
     public class DriversDB
     {
