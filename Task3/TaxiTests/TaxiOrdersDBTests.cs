@@ -12,11 +12,11 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_ReadingFromFile()
 		{
-			ClientsDB clientsInfo = new ClientsDB("../../Clients.txt");
+			ClientsDB clientsInfo = new ClientsDB("../../ClientsData.txt");
 			clientsInfo.ReadFromFile();
-			DriversDB driversInfo = new DriversDB("../../Drivers.txt");
+			DriversDB driversInfo = new DriversDB("../../DriversData.txt");
 			driversInfo.ReadFromFile();
-			OrdersDB ordersInfo = new OrdersDB("../../Orders.txt", clientsInfo, driversInfo);
+			OrdersDB ordersInfo = new OrdersDB("../../OrdersData.txt", clientsInfo, driversInfo);
 			ordersInfo.ReadFromFile();
 			Assert.AreEqual(ordersInfo.AllOrders.Count, 8);
 		}

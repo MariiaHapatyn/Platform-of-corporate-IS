@@ -10,7 +10,7 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_ReadingFromFile()
 		{
-			ClientsDB clientsInfo = new ClientsDB("../../Clients.txt");
+			ClientsDB clientsInfo = new ClientsDB("../../ClientsData.txt");
 			clientsInfo.ReadFromFile();
 			Assert.AreEqual(clientsInfo.AllClients.Count, 5);
 		}
@@ -18,7 +18,7 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_GetClientById()
 		{
-			ClientsDB clientsInfo = new ClientsDB("../../Clients.txt");
+			ClientsDB clientsInfo = new ClientsDB("../../ClientsData.txt");
 			clientsInfo.ReadFromFile();
 			Assert.AreEqual(clientsInfo.GetClientById(1).Id, Convert.ToUInt32(1));
 		}

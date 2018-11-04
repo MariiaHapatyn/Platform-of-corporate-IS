@@ -10,8 +10,8 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_TaxiClientConstructorAndProperties()
 		{
-			Client client = new Client(1, "Модест", "+380966784576");
-			Assert.AreEqual(client.Name, "Модест");
+			Client client = new Client(1, "Марія", "+380966784576");
+			Assert.AreEqual(client.Name, "Марія");
 			Assert.AreEqual(client.PhoneNumber, "+380966784576");
 		}
 
@@ -19,7 +19,7 @@ namespace Taxi_Tests
 		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Test_TaxiClientPopertiesException()
 		{
-			Client client = new Client(1, "Модест", "+380966784576");
+			Client client = new Client(1, "Марія", "+380966784576");
 			//not valid phone number
 			client.PhoneNumber = "+380966784576000";
 		}

@@ -10,9 +10,9 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_TaxiDriverConstructorAndProperties()
 		{
-			Driver driver = new Driver(1, "Радомський", "Модест", 20, "BC1789AM", 5, 50, 189.75);
-			Assert.AreEqual(driver.Surname, "Радомський");
-			Assert.AreEqual(driver.Name, "Модест");
+			Driver driver = new Driver(1, "Пастущак", "Ольга", 20, "BC1789AM", 5, 50, 189.75);
+			Assert.AreEqual(driver.Surname, "Пастущак");
+			Assert.AreEqual(driver.Name, "Ольга");
 			Assert.AreEqual(driver.Age, Convert.ToUInt32(20));
 			Assert.AreEqual(driver.CarNumber, "BC1789AM");
 			Assert.AreEqual(driver.Experience, Convert.ToUInt32(5));
@@ -24,7 +24,7 @@ namespace Taxi_Tests
 		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Test_TaxiDriverPopertiesException()
 		{
-			Driver driver = new Driver(1, "Радомський", "Модест", 20, "BC1789AM", 5, 50, 189);
+			Driver driver = new Driver(1, "Пастущак", "Ольга", 20, "BC1789AM", 5, 50, 189);
 			//not valid age
 			driver.Age = 17;
 		}

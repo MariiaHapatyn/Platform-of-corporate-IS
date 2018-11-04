@@ -10,7 +10,7 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_ReadingFromFile()
 		{
-			DriversDB driversInfo = new DriversDB("../../Drivers.txt");
+			DriversDB driversInfo = new DriversDB("../../DriversData.txt");
 			driversInfo.ReadFromFile();
 			Assert.AreEqual(driversInfo.AllDrivers.Count, 3);
 		}
@@ -18,7 +18,7 @@ namespace Taxi_Tests
 		[TestMethod]
 		public void Test_GetDriverById()
 		{
-			DriversDB driversInfo = new DriversDB("../../Drivers.txt");
+			DriversDB driversInfo = new DriversDB("../../DriversData.txt");
 			driversInfo.ReadFromFile();
 			Assert.AreEqual(driversInfo.GetDriverById(2).Id, Convert.ToUInt32(2));
 		}
