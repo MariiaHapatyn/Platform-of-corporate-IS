@@ -43,6 +43,24 @@ namespace Task4
                 Console.WriteLine("{0,-10}{1,-10}{2}", reader["FirstName"], reader["LastName"], reader["OrdersQuantity"]);
             }
             reader.Close();
+
+            Console.WriteLine("\nShow the list of french customers’ names who have made more than one order (use grouping)");
+            command.CommandText = "SELECT c.ContactName FROM Customers AS c, Orders AS o WHERE c.Country='France' GROUP BY c.ContactName HAVING COUNT(o.CustomerID)>1;";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["ContactName"]);
+            }
+            reader.Close();
+
+            Console.WriteLine("\nShow the list of french customers’ names who used to order french products");
+            command.CommandText = "SELECT c.ContactName FROM Customers AS c, Orders AS o WHERE c.CustomerID=o.CustomerID AND c.Country='France' AND o.ShipCountry='France';";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["ContactName"]);
+            }
+            reader.Close();
         }
     }
 }
