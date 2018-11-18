@@ -25,6 +25,24 @@ namespace Task4
                 Console.WriteLine("{0}\t{1}", reader["FirstName"], reader["LastName"]);
             }
             reader.Close();
+
+            Console.WriteLine("\nCalculate the count of employees from London");
+            command.CommandText = "SELECT COUNT(*) AS EmployeeQuantity FROM Employees WHERE City='London';";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["EmployeeQuantity"]);
+            }
+            reader.Close();
+
+            Console.WriteLine("\nShow first and last names of the employees as well as the count of orders each of them have received during the year 1997 (use left join)");
+            command.CommandText = "SELECT e.FirstName, e.LastName, COUNT(o.EmployeeID) AS OrdersQuantity FROM Employees AS e LEFT JOIN Orders AS o ON o.EmployeeID=e.EmployeeID WHERE o.OrderDate>='1997-01-01' AND o.OrderDate<='1997-12-31' GROUP BY e.FirstName, e.LastName;";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine("{0,-10}{1,-10}{2}", reader["FirstName"], reader["LastName"], reader["OrdersQuantity"]);
+            }
+            reader.Close();
         }
     }
 }
