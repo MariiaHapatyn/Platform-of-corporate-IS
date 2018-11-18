@@ -61,6 +61,16 @@ namespace Task4
                 Console.WriteLine(reader["ContactName"]);
             }
             reader.Close();
+            
+            Console.WriteLine("\nShow the total ordering sum calculated for each country of customer");
+            command.CommandText = "SELECT c.Country, SUM(od.UnitPrice) AS TotalPrice FROM Customers AS c, Orders AS o, [Order Details] AS od WHERE o.CustomerID=c.CustomerID AND o.OrderID=od.OrderID GROUP BY c.Country;";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine("{0,-10}{1}", reader["Country"], reader["TotalPrice"]);
+            }
+            reader.Close();
+            
         }
     }
 }
