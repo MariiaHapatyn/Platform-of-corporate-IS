@@ -10,7 +10,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Task3.DAO.DataTypes;
 using System.Windows.Threading;
 
 
@@ -21,20 +20,14 @@ namespace Task3
 	/// </summary>
 	public partial class OrderWindow : Window
     {
-        private Order currentOrder;
+       
         private DispatcherTimer dispatcherTimer = new DispatcherTimer();
         private DateTime startTime;
         private TimeSpan elapsedTime;
-        public OrderWindow(Order _currentOrder)
+        public OrderWindow()
         {
             InitializeComponent();
-            currentOrder = _currentOrder;
-
-            clientNameDesc.Content = currentOrder.Client.Name;
-            clientPhoneDesc.Content = currentOrder.Client.PhoneNumber;
-            clientFromDesc.Content = currentOrder.Dispatch;
-            clientToDesc.Content = currentOrder.Destination;
-            clientTimeDesc.Content = currentOrder.ArriveTime.ToString("dd-MM-yyyy HH:mm");
+           
         }
         private void startTimer()
         {
@@ -54,21 +47,7 @@ namespace Task3
         }
         private void endRoad_Click(object sender, RoutedEventArgs e)
         {
-            dispatcherTimer.Stop();
-            currentOrder.RoadTime = (uint)elapsedTime.TotalSeconds;
-            currentOrder.IsDone = true;
-            currentOrder.Cost = currentOrder.Driver.CostPerMinute * currentOrder.RoadTime / 60;
-            roadCostDesc.Content = currentOrder.Cost + " грн";
-            MessageBox.Show(String.Format("Вітаємо {0} з вас {1} грн!!!", currentOrder.Client.Name, currentOrder.Cost), "Квитанція");
-            foreach (Window item in Application.Current.Windows)
-            {
-                if (item.Name == "MainTaxiDriverWindow")
-                {
-                    (item as MainWindow).updateOrders(currentOrder);
-                    break;
-                }
-            }
-            Close();
+           
         }
     }
 }
