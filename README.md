@@ -1,7 +1,7 @@
 # Platform-of-corporate-IS
 ## AMi-31
 
-## Task 3, WPF-Service
+## Task 5, Entity Framework
 
 # Варіант 1. “Замовлення таксі (для водія таксі)”. 
 
