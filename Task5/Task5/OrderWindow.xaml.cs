@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 
-namespace Task3
+namespace Task5
 {
     /// <summary>
 	/// Interaction logic for OrderWindow.xaml
