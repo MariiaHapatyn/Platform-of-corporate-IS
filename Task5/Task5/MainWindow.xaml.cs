@@ -29,7 +29,7 @@ namespace Task5
             InitializeComponent();
             Closing += endOfWork_Close;
             AddClientsInfo();
-            //AddDriversInfo();
+            AddDriversInfo();
             //AddOrdersInfo();
             //using (DriverContext content = new DriverContext())
             //{
@@ -38,12 +38,41 @@ namespace Task5
         }
         private void AddClientsInfo()
         {
-           
+            using (var cont = new DriverContext())
+            {
+                var maria = new TaxiClient("Maria", "+380639786514");
+                var olya = new TaxiClient("Olya", "+380739706543");
+                var andriy = new TaxiClient("Andriy", "+380966785432");
+                var andriana = new TaxiClient("Andriana", "+380967689854");
+                var natalia = new TaxiClient("Natalia", "+380960807654");
+
+                cont.Clients.Add(maria);
+                cont.Clients.Add(olya);
+                cont.Clients.Add(andriy);
+                cont.Clients.Add(andriana);
+                cont.Clients.Add(natalia);
+                cont.SaveChanges();
+            }
         }
+
         private void AddDriversInfo()
         {
-            
+            using (var cont = new DriverContext())
+            {
+                var olya = new TaxiDriver("Pastushchak", "Olha", 19, "BC1567AC", 5, 50, 29);
+                var andriana = new TaxiDriver("Shcherbak", "Andriana", 19, "BC7898BM", 3, 75, 0);
+                var maria = new TaxiDriver("Maria", "Hapatyn", 20, "BC8765", 3, 23, 0);
+                var andriy = new TaxiDriver("Dubyk", "Andriyko", 12, "BC3456AM1", 3, 23, 50);
+
+                cont.Drivers.Add(olya);
+                cont.Drivers.Add(andriana);
+                cont.Drivers.Add(maria);
+                cont.Drivers.Add(andriy);
+
+                cont.SaveChanges();
+            }
         }
+
         private void AddOrdersInfo()
         {
             
