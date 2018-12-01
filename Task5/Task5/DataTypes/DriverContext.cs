@@ -12,5 +12,9 @@ namespace Task5.DataTypes
         public DbSet<TaxiDriver> Drivers { get; set; }
         public DbSet<TaxiClient> Clients { get; set; }
         public DbSet<TaxiOrder> Orders { get; set; }
+
+        public DriverContext() : base("name=DriverContext")
+        {
+        }
     }
 }

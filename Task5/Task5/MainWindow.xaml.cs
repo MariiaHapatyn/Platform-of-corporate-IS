@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Task3.UnitOfWork;
+using Task5.DataTypes;
 
 namespace Task5
 {
@@ -21,33 +23,62 @@ namespace Task5
     /// </summary>
     public partial class MainWindow : Window
     {
-       
-
+        TaxiDriver currentDriver;
         public MainWindow()
         {
             InitializeComponent();
-            
+            Closing += endOfWork_Close;
+            AddClientsInfo();
+            //AddDriversInfo();
+            //AddOrdersInfo();
+            //using (DriverContext content = new DriverContext())
+            //{
+            //    content.Database.Delete();
+            //}
         }
-        private void startWork_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void endOfWork_Click(object sender, RoutedEventArgs e)
+        private void AddClientsInfo()
         {
            
-          
         }
+        private void AddDriversInfo()
+        {
+            
+        }
+        private void AddOrdersInfo()
+        {
+            
+        }
+
+        public void updateOrders(TaxiOrder orderToUpdate)
+        {
+            
+        }
+
         private void orders_Click(object sender, RoutedEventArgs e)
         {
-            
+          
         }
-        public void updateOrders()
+
+        private void startWork_Click(object sender, RoutedEventArgs e)
         {
-            
+          
         }
-        private void ShowOrdersInListView()
+
+        private void updateDriverInfo()
         {
            
+        }
+
+        private void endOfWork_Click(object sender, RoutedEventArgs e)
+        {
+            updateDriverInfo();
+            Close();
+        }
+
+        private void endOfWork_Close(object sender, CancelEventArgs e)
+        {
+            updateDriverInfo();
+            MessageBox.Show(String.Format("Дякуюємо за роботу {0}!", currentDriver.Name), "Допобачення");
         }
     }
 }

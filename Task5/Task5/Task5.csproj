@@ -67,6 +67,8 @@
     <Compile Include="DataTypes\TaxiOrder.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -117,8 +119,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitOfWork\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
