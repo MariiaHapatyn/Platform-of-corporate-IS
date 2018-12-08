@@ -36,9 +36,9 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Label x:Name="driverUsernameLabel" FontFamily="Verdana" Content="Прізвище водія: " Grid.Row="0" Grid.Column="0"/>
-                    <TextBox x:Name="driverSurName" FontFamily="Verdana" TextWrapping="Wrap" Height="23" Text="Петренко" Grid.Row="0" Grid.Column="1" />
+                    <TextBox x:Name="driverSurName" FontFamily="Verdana" TextWrapping="Wrap" Height="23" Text="Pastushchak" Grid.Row="0" Grid.Column="1" />
                     <Label x:Name="driverUserNameLabel" FontFamily="Verdana" Content="Імя водія: " Grid.Row="1" Grid.Column="0"/>
-                    <TextBox x:Name="driverUserName" FontFamily="Verdana" TextWrapping="Wrap" Height="23" Text="Іван" Grid.Row="1" Grid.Column="1"/>
+                    <TextBox x:Name="driverUserName" FontFamily="Verdana" TextWrapping="Wrap" Height="23" Text="Olha" Grid.Row="1" Grid.Column="1"/>
                     <Button x:Name="endOfWork" FontFamily="Verdana" Content="Завершити зміну" Grid.Row="2" Grid.Column="0" Margin="5" Click="endOfWork_Click"/>
                     <Button x:Name="startWork" FontFamily="Verdana" Content="Почати зміну" Grid.Row="2" Grid.Column="1" Margin="5" Click="startWork_Click"/>
                 </Grid>
