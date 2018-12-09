@@ -66,6 +66,15 @@
     <Compile Include="DataTypes\TaxiClient.cs" />
     <Compile Include="DataTypes\TaxiDriver.cs" />
     <Compile Include="DataTypes\TaxiOrder.cs" />
+    <Compile Include="Migrations\201812010649496_InitialCreate.cs" />
+    <Compile Include="Migrations\201812010649496_InitialCreate.Designer.cs">
+      <DependentUpon>201812010649496_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812090747351_Initial.cs" />
+    <Compile Include="Migrations\201812090747351_Initial.Designer.cs">
+      <DependentUpon>201812090747351_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
@@ -104,6 +113,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201812010649496_InitialCreate.resx">
+      <DependentUpon>201812010649496_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812090747351_Initial.resx">
+      <DependentUpon>201812090747351_Initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

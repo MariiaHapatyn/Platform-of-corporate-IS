@@ -17,7 +17,9 @@ namespace Task5
         {
             InitializeComponent();
             Closing += endOfWork_Close;
-           
+            //AddClientsInfo();
+            //AddDriversInfo();
+            //AddOrdersInfo();        
         }
         private void AddClientsInfo()
         {
@@ -111,19 +113,26 @@ namespace Task5
             using (UnitOfWork.UnitOfWork content = new UnitOfWork.UnitOfWork())
             {
                 currentDriver = content.Drivers.Get(s => s.Name == driverUserName.Text).FirstOrDefault();
-                driverInfoSurnameNameDetails.Content = currentDriver.Surname + " " + currentDriver.Name;
-                driverInfoAgeDetails.Content = currentDriver.Age;
-                driverInfoCarDetails.Content = currentDriver.CarNumber;
-                driverInfoExpDetails.Content = currentDriver.Experience;
-                driverInfoCostDetails.Content = currentDriver.PayCheck + " грн";
-                driverInfoCostPerMinDetails.Content = currentDriver.CostPerMinute;
-
-                var currentOrders = content.Orders.Get(s => s.Driver.DriverId == currentDriver.DriverId, includeProperties: "Client");
-
-                orders.Items.Clear();
-                foreach (var order in currentOrders)
+                if (currentDriver != null)
                 {
-                    orders.Items.Add(order);
+                    driverInfoSurnameNameDetails.Content = currentDriver.Surname + " " + currentDriver.Name;
+                    driverInfoAgeDetails.Content = currentDriver.Age;
+                    driverInfoCarDetails.Content = currentDriver.CarNumber;
+                    driverInfoExpDetails.Content = currentDriver.Experience;
+                    driverInfoCostDetails.Content = currentDriver.PayCheck + " грн";
+                    driverInfoCostPerMinDetails.Content = currentDriver.CostPerMinute;
+
+                    var currentOrders = content.Orders.Get(s => s.Driver.DriverId == currentDriver.DriverId, includeProperties: "Client");
+
+                    orders.Items.Clear();
+                    foreach (var order in currentOrders)
+                    {
+                        orders.Items.Add(order);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(String.Format("Водія {0} не знайдено!!!", driverUserName.Text));
                 }
             }
         }
